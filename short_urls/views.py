@@ -116,6 +116,7 @@ def custom(request):
             if long_url_count > 0:
                 obj = long_url_list[0]
                 Custom_URL.objects.create(custom_url=request.data['custom_url'], short_url=obj)
+                r.set(request.data['custom_url'], request.data['long_url'])
                 response = {
                     'message': 'custom url created with existing short url alias', 
                     'short_url': obj.short_url,

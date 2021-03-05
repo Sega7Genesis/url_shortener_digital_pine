@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'url_shortener.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'for_urls',
         'USER': 'root',
-        'PASSWORD': 'ubodah38',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '3306',
     }
