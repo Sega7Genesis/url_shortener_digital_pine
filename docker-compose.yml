@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  short_urls:
+    image: short_urls:latest
+    container_name: short_urls
+    command: python manage.py runserver 0.0.0.0:8080
+    ports:
+      - 8080:8080
+    build:
+      context: .
+
+  redis:
+    image: "redis:alpine"
+
+volumes:
+  db-data:

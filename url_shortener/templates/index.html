@@ -1,0 +1,31 @@
+<h3>Welcome to my url shortener</h3>
+<h4>Endpoints</h4>
+    <ul>
+        <li><a href="/api/make_short">/api/make_short</a></li>
+        <li><a href="/api/last_hundred">/api/last_hundred</a></li>
+        <li><a href="/api/domains">/api/domains</a></li>
+        <li><a href="/api/visits">/api/visits</a></li>
+        <li><a href="/api/custom">/api/custom</a></li>
+    </ul>
+<h4>Short URL's</h4>
+<table>
+    {% for short in shorts %}
+        <tr>
+	    <td><a href="{{ short.short_url }}">{{ short.short_url }}</a></td>
+            <td> {{ short.domain }} </td>
+            <td> {{ short.long_url }} </td>
+        </tr>
+    {% endfor %}
+</table>
+<h4>Custom URL's</h4>
+<table>
+    {% for custom in customs %}
+        <tr>
+            <td><a href="{{ custom.custom_url }}">{{ custom.custom_url }}</a></td>
+            <td><a href="{{ custom.short_url.short_url }}">{{ custom.short_url.short_url }}</td>
+            <td> {{ custom.short_url.domain }} </td>
+            <td> {{ custom.short_url.long_url }} </td>
+        </tr>
+    {% endfor %}
+</table>
+
